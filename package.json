@@ -16,5 +16,8 @@
     "url": "https://github.com/nrozeart/react_home_work/issues"
   },
   "homepage": "https://github.com/nrozeart/react_home_work#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }

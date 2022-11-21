@@ -1,49 +1,66 @@
 import './App.css';
 import { Message } from './components/Message.jsx';
 import { useState, useEffect } from 'react';
+// import { Form } from './components/FormClass/Form';
+import { Form } from './components/Form/Form';
 
 const emptyObj = {
   id: 1, // генерируем уникальный id
   text: '',
-  author: ''
+  author: '',
 };
 
 export const App = () => {
-  const messageText = `Доброго времени суток! Это мое первое домашнее задание по React!`
+  const messageText =
+    'Урок 1. Доброго времени суток! Это мое первое домашнее задание по React!';
   const [messageList, setMessageList] = useState([]);
-  const [objArr, setValue] = useState(messageList);
-  const [obj, setObj] = useState(messageList);
+  const [message, setMessage] = useState(messageList);
 
-  useEffect(
-    () => {
-      alert('Спасибо за сообщение!');
-    }, [objArr]
-  );
+  useEffect(() => {
+    alert('Спасибо за сообщение!');
+  }, [messageList]);
 
   const add = () => {
-    setValue([...objArr, obj]);  // добавление объекта к массиву
-    setObj(emptyObj); // сохранение пустого объекта в стейт
-  }
-  const change = (prop, event) => { // изменение свойства при вводе
-    setObj({ ...obj, [prop]: event.target.value });
-  }
-  const result = objArr.map((obj) => { // вывод сохранённого массива объектов
-    return <p key={obj.id}>
-      Текст: {obj.text} <br />
-      Автор: {obj.author}
-    </p>;
-  })
+    setMessageList([...messageList, message]); // добавление объекта к массиву
+    setMessage(emptyObj); // сохранение пустого объекта в стейт
+  };
+  const change = (prop, event) => {
+    // изменение свойства при вводе
+    setMessage({ ...message, [prop]: event.target.value });
+  };
+  const result = messageList.map((message) => {
+    // вывод сохранённого массива объектов
+    return (
+      <p key={message.id}>
+        Текст: {message.text} <br />
+        Автор: {message.author}
+      </p>
+    );
+  });
 
   return (
-    <div className="App">
+    <div className="app">
       <Message messageText={messageText} />
-      <hr />
-      <input placeholder='Введите текст' value={obj.text} onChange={event => change('text', event)}></input>
-      <input placeholder='Введите автора' value={obj.author} onChange={event => change('author', event)}></input>
-      <button type='text' onClick={add}>Отправить сообщение</button>
-      {result}
+      <div className="lesson-two">
+        <Form />
+        <p>ДЗ (к уроку 2)</p>
+        <input
+          placeholder="Введите текст"
+          value={message.text}
+          onChange={(event) => change('text', event)}
+        ></input>
+        <input
+          placeholder="Введите автора"
+          value={message.author}
+          onChange={(event) => change('author', event)}
+        ></input>
+        <button type="text" onClick={add}>
+          Отправить сообщение
+        </button>
+        {result}
+      </div>
     </div>
   );
-}
+};
 
 export default App;

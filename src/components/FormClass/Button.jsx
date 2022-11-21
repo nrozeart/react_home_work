@@ -29,7 +29,10 @@ export class Button extends PureComponent {
     return (
       <>
         <p>{this.state.count}</p>
-        <button disabled={this.props.disabled} onClick={() => this.setState({ count: this.state.count + 1 })}>
+        <button
+          disabled={this.props.disabled}
+          onClick={() => this.setState({ count: this.state.count + 1 })}
+        >
           {' '}
           +1
         </button>

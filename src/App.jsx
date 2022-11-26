@@ -3,6 +3,9 @@ import { Message } from './components/Message.jsx';
 import { useState, useEffect } from 'react';
 // import { Form } from './components/FormClass/Form';
 import { Form } from './components/Form/Form';
+import { Button, Input } from '@mui/material';
+import TextField from '@mui/material/TextField';
+
 
 const emptyObj = {
   id: 1, // генерируем уникальный id
@@ -31,10 +34,9 @@ export const App = () => {
   const result = messageList.map((message) => {
     // вывод сохранённого массива объектов
     return (
-      <p key={message.id}>
-        Текст: {message.text} <br />
-        Автор: {message.author}
-      </p>
+      <li key={message.id}>
+        {message.author} : {message.text}
+      </li>
     );
   });
 
@@ -44,19 +46,19 @@ export const App = () => {
       <div className="lesson-two">
         <Form />
         <p>ДЗ (к уроку 2)</p>
-        <input
-          placeholder="Введите текст"
-          value={message.text}
-          onChange={(event) => change('text', event)}
-        ></input>
-        <input
+        <TextField id="outlined-basic" variant="outlined"
           placeholder="Введите автора"
           value={message.author}
           onChange={(event) => change('author', event)}
-        ></input>
-        <button type="text" onClick={add}>
+        ></TextField>
+        <TextField id="outlined-basic" variant="outlined"
+          placeholder="Введите текст"
+          value={message.text}
+          onChange={(event) => change('text', event)}
+        ></TextField>
+        <Button variant="outlined" type="submit" onClick={add}>
           Отправить сообщение
-        </button>
+        </Button>
         {result}
       </div>
     </div>

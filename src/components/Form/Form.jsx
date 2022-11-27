@@ -53,8 +53,10 @@ export const Form = () => {
       <Button variant="outlined" type="submit" onClick={add}>
         Отправить сообщение
       </Button>
-      <ChatList />
-      {result}
+      <div className='message-block'>
+        <ChatList />
+        {result}
+      </div>
     </div>
   );
 };

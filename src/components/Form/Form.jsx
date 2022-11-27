@@ -1,24 +1,57 @@
-import { useState, useRef } from 'react';
-import { Button } from '../Form/Button';
+import { useState, useEffect, useRef } from 'react';
+import { Button } from '@mui/material';
+import TextField from '@mui/material/TextField';
 
 export const Form = () => {
-  const [count, setCount] = useState(0);
-  const [visible, setVisible] = useState(true);
-  const buttonEl = useRef(null);
+  const [messageList, setMessageList] = useState([]);
+  const [message, setMessage] = useState(messageList);
+
+  const emptyObj = {
+    id: 1, // генерируем уникальный id
+    text: '',
+    author: '',
+  };
+  useEffect(() => {
+    alert('Спасибо за сообщение!');
+  }, [messageList]);
+
+  const add = () => {
+    setMessageList([...messageList, message]); // добавление объекта к массиву
+    setMessage(emptyObj); // сохранение пустого объекта в стейт
+  };
+  const change = (prop, event) => {
+    // изменение свойства при вводе
+    setMessage({ ...message, [prop]: event.target.value });
+  };
+  const result = messageList.map((message) => {
+    // вывод сохранённого массива объектов
+    return (
+      <li key={message.id} >
+        {message.author} : {message.text}
+      </li >
+    )
+  });
 
   return (
-    <div className="lesson-two">
-      <p>Parent component</p>
-      <p>{count}</p>
-      <button ref={buttonEl} onClick={() => setCount(count + 1)}>
-        +1
-      </button>
-      <br />
-      <button onClick={() => setVisible(!visible)}>
-        {visible ? 'hide' : 'show'}
-      </button>
-      <p>Child component</p>
-      {visible && <Button value={0} />}
+    <div>
+      <TextField
+        id="outlined-basic"
+        variant="outlined"
+        placeholder="Введите автора"
+        value={message.author}
+        onChange={(event) => change('author', event)}
+      ></TextField>
+      <TextField autoFocus={true}
+        id="outlined-basic"
+        variant="outlined"
+        placeholder="Введите текст"
+        value={message.text}
+        onChange={(event) => change('text', event)}
+      ></TextField>
+      <Button variant="outlined" type="submit" onClick={add}>
+        Отправить сообщение
+      </Button>
+      {result}
     </div>
   );
 };

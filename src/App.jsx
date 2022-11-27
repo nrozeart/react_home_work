@@ -6,16 +6,14 @@ export const App = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#cc00ff",
+        main: '#cc00ff',
       },
       secondary: {
-        main: "#A9A9A9",
+        main: '#A9A9A9',
       },
     },
     typography: {
-      fontFamily: [
-        '"Helvetica Neue"',
-      ]
+      fontFamily: ['"Helvetica Neue"'],
     },
   });
 

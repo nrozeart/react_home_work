@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import { ChatList } from '../ChatList/ChatList';
 
 export const Form = () => {
   const [messageList, setMessageList] = useState([]);
@@ -26,10 +27,10 @@ export const Form = () => {
   const result = messageList.map((message) => {
     // вывод сохранённого массива объектов
     return (
-      <li key={message.id} >
+      <li key={message.id}>
         {message.author} : {message.text}
-      </li >
-    )
+      </li>
+    );
   });
 
   return (
@@ -41,7 +42,8 @@ export const Form = () => {
         value={message.author}
         onChange={(event) => change('author', event)}
       ></TextField>
-      <TextField autoFocus={true}
+      <TextField
+        autoFocus={true}
         id="outlined-basic"
         variant="outlined"
         placeholder="Введите текст"
@@ -51,6 +53,7 @@ export const Form = () => {
       <Button variant="outlined" type="submit" onClick={add}>
         Отправить сообщение
       </Button>
+      <ChatList />
       {result}
     </div>
   );

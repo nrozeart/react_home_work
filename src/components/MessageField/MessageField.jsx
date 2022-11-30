@@ -34,26 +34,30 @@ export const MessageField = () => {
     });
 
     return (
-        <div className="contacts-block">
-            {result}
-            <TextField
-                id="outlined-basic"
-                variant="outlined"
-                placeholder="Введите автора"
-                value={message.author}
-                onChange={(event) => change('author', event)}
-            ></TextField>
-            <TextField
-                autoFocus={true}
-                id="outlined-basic"
-                variant="outlined"
-                placeholder="Введите текст"
-                value={message.text}
-                onChange={(event) => change('text', event)}
-            ></TextField>
-            <Button variant="outlined" type="submit" onClick={add}>
-                Отправить сообщение
-            </Button>
+        <div className="message-field">
+            <div className='message-field-messages'>
+                {result}
+            </div>
+            <div className="message-field-send-form">
+                <TextField className='message-field-send-form-author'
+                    id="outlined-basic"
+                    variant="outlined"
+                    placeholder="Введите автора"
+                    value={message.author}
+                    onChange={(event) => change('author', event)}
+                ></TextField>
+                <TextField className='message-field-send-form-message'
+                    autoFocus={true}
+                    id="outlined-basic"
+                    variant="outlined"
+                    placeholder="Введите текст сообщения"
+                    value={message.text}
+                    onChange={(event) => change('text', event)}
+                ></TextField>
+                <Button className='message-field-send-form-send-button' variant="outlined" type="submit" onClick={add}>
+                    Отправить
+                </Button>
+            </div>
         </div>
     );
 };

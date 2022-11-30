@@ -1,7 +1,10 @@
 .App {
   text-align: left;
   font-size: 24px;
-  padding: 20px;
+}
+
+.container {
+  margin: 10px;
 }
 
 .lesson-one {
@@ -19,12 +22,6 @@
 
 .communication-block {
   display: flex;
-}
-
-.messages-block {
-  padding: 0 0 0 50px;
-}
-
-#root>div>div.communication-block>div.contacts-block>li {
-  list-style-type: none;
+  width: 100%;
+  height: 80vh;
 }

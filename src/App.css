@@ -17,6 +17,14 @@
   margin: 20px 0 0 0;
 }
 
-.message-block {
-  display: block;
+.communication-block {
+  display: flex;
+}
+
+.messages-block {
+  padding: 0 0 0 50px;
+}
+
+#root>div>div.communication-block>div.contacts-block>li {
+  list-style-type: none;
 }

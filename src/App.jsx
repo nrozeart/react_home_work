@@ -1,15 +1,17 @@
 import './App.css';
-import { Form } from './components/Form/Form';
 import { createTheme, ThemeProvider } from '@mui/material';
+import { ChatList } from './components/ChatList/ChatList';
+import { MessageField } from './components/MessageField/MessageField';
+import { Header } from './components/Header/Header';
 
-export const App = () => {
+export const App = ({ chatId }) => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#cc00ff',
+        main: '#000000',
       },
       secondary: {
-        main: '#A9A9A9',
+        main: '#ffffff',
       },
     },
     typography: {
@@ -20,7 +22,11 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Form />
+        <Header chatId={chatId} />
+        <div className='communication-block'>
+          <ChatList />
+          <MessageField />
+        </div>
       </div>
     </ThemeProvider>
   );

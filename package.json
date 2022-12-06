@@ -1,5 +1,6 @@
 {
   "name": "my-app",
+  "main": "index.jsx",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://nrozeart.github.io/react_home_work/",

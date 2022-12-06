@@ -23,14 +23,14 @@ export const App = ({ chatId }) => {
     <ThemeProvider theme={theme}>
       <div>
         <Header chatId={chatId} />
-        <div className='container'>
+        <div className="container">
           <div className="communication-block">
             <ChatList />
             <MessageField />
           </div>
         </div>
       </div>
-    </ThemeProvider >
+    </ThemeProvider>
   );
 };
 

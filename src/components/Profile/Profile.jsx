@@ -3,13 +3,15 @@ import { toggleShowName } from '../../store/profile/actions';
 
 import './Profile.css';
 import { Link } from 'react-router-dom';
-import { store } from '../../index';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const Profile = () => {
-  const { showName, name } = store.getState();
+  const { showName, name } = useSelector((state) => state);
+  const dispatch = useDispatch();
+
   const setShowName = useCallback(() => {
-    store.dispatch(toggleShowName);
-  }, [store.dispatch]);
+    dispatch(toggleShowName);
+  }, [dispatch]);
 
   return (
     <div>

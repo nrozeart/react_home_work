@@ -5,12 +5,12 @@ import { BrowserRouter } from 'react-router-dom';
 import { Router } from './router';
 import { Provider } from 'react-redux';
 import { profileReducer } from './store/profile/profileReducer';
-import { initState } from './store/profile/initState';
 import { createStore } from 'redux';
 
 export const store = createStore(
   profileReducer,
-  initState
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+  window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

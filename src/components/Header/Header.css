@@ -1,0 +1,19 @@
+.header {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.header-right-block {
+    display: flex;
+}
+
+.header-right-block-profile-icon {
+    display: block;
+}
+
+.header-right-block-home-icon {
+    display: block;
+    margin: 0 0 0 10px;
+}

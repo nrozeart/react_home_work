@@ -1,0 +1,19 @@
+.profile-page-header {
+    background-color: lightgray;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.profile-page-header-right-block {
+    display: flex;
+}
+
+.profile-chats-icon {
+    display: block;
+}
+
+.profile-home-icon {
+    display: block;
+    margin: 0 0 0 10px;
+}

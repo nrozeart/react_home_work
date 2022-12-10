@@ -2,7 +2,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    es6: true
+    es6: true,
   },
   extends: ['prettier', 'eslint:recommended', 'plugin:prettier/recommended', 'plugin:react/recommended', 'plugin:react-hooks/recommended', 'plugin:storybook/recommended'],
   parserOptions: {

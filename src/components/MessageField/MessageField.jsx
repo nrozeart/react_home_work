@@ -2,15 +2,18 @@ import './MessageField.css';
 import { useState, useEffect } from 'react';
 import { Button } from '@mui/material';
 import TextField from '@mui/material/TextField';
+import { useSelector } from 'react-redux';
 
 export const MessageField = () => {
   const [messageList, setMessageList] = useState([]);
   const [message, setMessage] = useState(messageList);
+  const profileName = useSelector((state) => state.name);
 
   const emptyObj = {
     id: 1, // генерируем уникальный id
     text: '',
     author: '',
+    ME: true,
   };
   useEffect(() => {
     alert('Спасибо за сообщение!');
@@ -19,6 +22,7 @@ export const MessageField = () => {
   const add = () => {
     setMessageList([...messageList, message]); // добавление объекта к массиву
     setMessage(emptyObj); // сохранение пустого объекта в стейт
+    emptyObj.ME == !emptyObj.ME;
   };
   const change = (prop, event) => {
     // изменение свойства при вводе
@@ -28,7 +32,7 @@ export const MessageField = () => {
     // вывод сохранённого массива объектов
     return (
       <li key={message.id}>
-        {message.author} : {message.text}
+        {emptyObj.ME ? profileName : message.author} : {message.text}
       </li>
     );
   });

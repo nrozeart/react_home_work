@@ -9,7 +9,7 @@ export const Header = ({ chatId }) => {
         <Link className="header-right-block-profile-icon" to="/profile">
           <h2>Profile</h2>
         </Link>
-        <Link className="header-right-block-home-icon" to="/home">
+        <Link className="header-right-block-home-icon" to="/">
           <h2>Home</h2>
         </Link>
       </div>

@@ -1,0 +1,30 @@
+#outlined-basic {
+    padding: 7px;
+}
+
+.message-field {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 0 0 20px;
+}
+
+.message-field-messages {
+    list-style-type: none;
+}
+
+.message-field-send-form {
+    position: absolute;
+    bottom: 20px;
+}
+
+.message-field-send-form-author {
+    width: 10vw;
+}
+
+.message-field-send-form-message {
+    width: 60vw;
+}
+
+.message-field-send-form-send-button {
+    width: 100px;
+}

@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
 export const Profile = () => {
-  const { name } = useSelector((state) => state);
+  const { name } = useSelector((store) => store.profile);
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
 
@@ -37,6 +37,7 @@ export const Profile = () => {
         </div>
       </div>
       <div>
+        <div>Name:{name}</div>
         <div>
           <input type="text" value={value} onChange={handleChange} />
         </div>

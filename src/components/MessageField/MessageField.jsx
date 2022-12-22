@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux';
 export const MessageField = () => {
   const [messageList, setMessageList] = useState([]);
   const [message, setMessage] = useState(messageList);
-  const profileName = useSelector((state) => state.name);
+  const profileName = useSelector((store) => store.profile);
 
   const emptyObj = {
     id: 1, // генерируем уникальный id
@@ -32,7 +32,7 @@ export const MessageField = () => {
     // вывод сохранённого массива объектов
     return (
       <li key={message.id}>
-        {emptyObj.ME ? profileName : message.author} : {message.text}
+        {profileName.name} : {message.text}
       </li>
     );
   });

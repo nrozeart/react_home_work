@@ -13,7 +13,6 @@ export const MessageField = () => {
     id: 1, // генерируем уникальный id
     text: '',
     author: '',
-    ME: true,
   };
   useEffect(() => {
     alert('Спасибо за сообщение!');
@@ -22,7 +21,6 @@ export const MessageField = () => {
   const add = () => {
     setMessageList([...messageList, message]); // добавление объекта к массиву
     setMessage(emptyObj); // сохранение пустого объекта в стейт
-    emptyObj.ME == !emptyObj.ME;
   };
   const change = (prop, event) => {
     // изменение свойства при вводе
@@ -33,6 +31,7 @@ export const MessageField = () => {
     return (
       <li key={message.id}>
         {profileName.name} : {message.text}
+        <p className='bot-answer'>BOT : Yes</p>
       </li>
     );
   });
@@ -41,14 +40,6 @@ export const MessageField = () => {
     <div className="message-field">
       <div className="message-field-messages">{result}</div>
       <div className="message-field-send-form">
-        <TextField
-          className="message-field-send-form-author"
-          id="outlined-basic"
-          variant="outlined"
-          placeholder="Введите автора"
-          value={message.author}
-          onChange={(event) => change('author', event)}
-        ></TextField>
         <TextField
           className="message-field-send-form-message"
           autoFocus={true}

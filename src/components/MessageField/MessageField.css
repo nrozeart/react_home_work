@@ -5,7 +5,10 @@
 .message-field {
     display: flex;
     flex-direction: column;
-    margin: 0px 0 0 20px;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    width: 50%;
+    box-shadow: inset -1px 0 0 lightgray;
 }
 
 .message-field-messages {
@@ -13,18 +16,19 @@
 }
 
 .message-field-send-form {
-    position: absolute;
-    bottom: 20px;
-}
+    display: flex;
 
-.message-field-send-form-author {
-    width: 10vw;
 }
 
 .message-field-send-form-message {
-    width: 60vw;
+    width: 100%;
 }
 
 .message-field-send-form-send-button {
     width: 100px;
+}
+
+.bot-answer {
+    display: flex;
+    justify-content: right;
 }

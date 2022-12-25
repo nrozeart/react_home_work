@@ -31,7 +31,7 @@ export const MessageField = () => {
     return (
       <li key={message.id}>
         {profileName.name} : {message.text}
-        <p className='bot-answer'>BOT : Yes</p>
+        <p className="bot-answer">BOT : Yes</p>
       </li>
     );
   });

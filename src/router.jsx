@@ -1,34 +1,42 @@
-import { Switch, Route } from 'react-router-dom';
-import App from './App';
+import { Routes, Route } from 'react-router-dom';
+import { GistsList } from './components/GistsList/GistsList';
+import { Chatspage } from './components/Chatspage/Chatspage';
 import { Home } from './components/Home/Home';
 import { Profile } from './components/Profile/Profile';
 
+import { Signup } from './components/Signup/PageSignup';
+import { Signin } from './components/Signin/PageSignin';
+
 export const Router = () => {
   return (
-    <Switch>
+    <Routes>
       <Route
-        path="/chat/1"
-        render={() => <App chatId={'Алина Ковалева'} />}
         exact
+        path="/chat/1"
+        element={<Chatspage chatId={'Алина Ковалева'} />}
       />
       <Route
         path="/chat/2"
-        render={() => <App chatId={'Дамир Шайхуллов'} />}
+        element={<Chatspage chatId={'Дамир Шайхуллов'} />}
         exact
       />
       <Route
         path="/chat/3"
-        render={() => <App chatId={'Карина Ванина'} />}
+        element={<Chatspage chatId={'Карина Ванина'} />}
         exact
       />
       <Route
         path="/chat/4"
-        render={() => <App chatId={'Сергей Кашемиров'} />}
+        element={<Chatspage chatId={'Сергей Кашемиров'} />}
         exact
       />
-      <Route path="/profile" render={() => <Profile />} exact />
-      <Route path="/chats-page" render={() => <App />} exact />
-      <Route path="/" render={() => <Home />} exact />
-    </Switch>
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/chatspage" element={<Chatspage />} exact />
+      <Route path="/gists" element={<GistsList />} exact />
+      <Route path="/home" element={<Home />} exact />
+      <Route path="*" element={<h2>404 Page not found</h2>} />
+      <Route path="/signin" element={<Signin />} exact />
+      <Route path="/signup" element={<Signup />} exact />
+    </Routes>
   );
 };

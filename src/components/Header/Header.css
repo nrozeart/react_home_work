@@ -1,19 +1,52 @@
 .header {
-    background-color: lightgray;
+    background-color: #e7e7e7;
     display: flex;
-    justify-content: space-between;
     padding: 20px;
 }
 
-.header-right-block {
-    display: flex;
+.button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
 }
 
-.header-right-block-profile-icon {
-    display: block;
+.button:active {
+    background-color: #e7e7e7;
+    color: black;
 }
 
-.header-right-block-home-icon {
+.signin-button {
     display: block;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.signup-button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
 }

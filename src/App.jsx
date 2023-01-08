@@ -1,4 +1,5 @@
 import './App.css';
+import { Header } from './components/Header/Header';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 export const App = () => {
@@ -19,6 +20,7 @@ export const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div>
+        <Header />
       </div>
     </ThemeProvider>
   );

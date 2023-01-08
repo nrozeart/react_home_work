@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { changeName } from '../../store/profile/actions';
 
 import './Profile.css';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 

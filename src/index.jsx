@@ -12,7 +12,7 @@ import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { flowRight as compose } from 'lodash';
-import { Header } from './components/Header/Header';
+import { App } from './App';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -59,7 +59,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <Header />
+      <App />
       <Router />
     </BrowserRouter>
   </Provider>

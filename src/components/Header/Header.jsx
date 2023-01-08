@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 
-export const Header = ({ chatId }) => {
+export const Header = () => {
   return (
     <div className="header">
       <div className="header-right-block">

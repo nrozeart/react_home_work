@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { Api, GistsList } from './components/GistsList/GistsList';
+import { GistsList } from './components/GistsList/GistsList';
 import { Chatspage } from './components/Chatspage/Chatspage';
 import { Home } from './components/Home/Home';
 import { Profile } from './components/Profile/Profile';

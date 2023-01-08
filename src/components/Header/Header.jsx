@@ -11,8 +11,8 @@ export const Header = () => {
         <Link className="header-right-block-home-icon" to="/home">
           <h2>Home</h2>
         </Link>
-        <Link className="header-right-block-api-icon" to="/api">
-          <h2>Api</h2>
+        <Link className="header-right-block-api-icon" to="/gists">
+          <h2>Gists</h2>
         </Link>
         <Link to="/chatspage">
           <h2>Chats page</h2>

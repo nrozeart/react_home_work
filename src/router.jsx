@@ -1,5 +1,5 @@
 import { Switch, Route } from 'react-router-dom';
-import { Api } from './components/Api/Api';
+import { Api, GistsList } from './components/GistsList/GistsList';
 import { Chatspage } from './components/Chatspage/Chatspage';
 import { Home } from './components/Home/Home';
 import { Profile } from './components/Profile/Profile';
@@ -29,7 +29,7 @@ export const Router = () => {
       />
       <Route path="/profile" render={() => <Profile />} exact />
       <Route path="/chatspage" render={() => <Chatspage />} exact />
-      <Route path="/api" render={() => <Api />} exact />
+      <Route path="/gists" render={() => <GistsList />} exact />
       <Route path="/home" render={() => <Home />} exact />
       <Route path="*" render={() => <h2>404 Page not found</h2>} />
     </Switch>

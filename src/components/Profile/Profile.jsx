@@ -2,7 +2,6 @@ import { useCallback } from 'react';
 import { changeName } from '../../store/profile/actions';
 
 import './Profile.css';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState } from 'react';
 
@@ -25,17 +24,7 @@ export const Profile = () => {
 
   return (
     <div>
-      <div className="profile-page-header">
-        <h1>Profile page</h1>
-        <div className="profile-page-header-right-block">
-          <Link className="profile-chats-icon" to="/chats-page">
-            <h2>Chats</h2>
-          </Link>
-          <Link className="profile-home-icon" to="/">
-            <h2>Home</h2>
-          </Link>
-        </div>
-      </div>
+      <h3>Profile page</h3>
       <div>
         <div>Name:{name}</div>
         <div>

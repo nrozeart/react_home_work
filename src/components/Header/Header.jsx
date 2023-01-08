@@ -4,20 +4,25 @@ import './Header.css';
 export const Header = () => {
   return (
     <div className="header">
-      <div className="header-right-block">
-        <Link className="header-right-block-profile-icon" to="/profile">
-          <h2>Profile</h2>
-        </Link>
-        <Link className="header-right-block-home-icon" to="/home">
-          <h2>Home</h2>
-        </Link>
-        <Link className="header-right-block-api-icon" to="/gists">
-          <h2>Gists</h2>
-        </Link>
-        <Link to="/chatspage">
-          <h2>Chats page</h2>
-        </Link>
-      </div>
+      <Link to="/profile">
+        <button type='button' className="button" >Profile</button>
+      </Link>
+      <Link to="/home">
+        <button className="button" >Home</button>
+      </Link>
+      <Link to="/gists">
+        <button className="button" >Gists</button>
+      </Link>
+      <Link to="/chatspage">
+        <button className="button" >Chats</button>
+      </Link>
+      <Link to="/signin">
+        <button className="signin-button" >SignIn</button>
+      </Link>
+      <Link to="/signup">
+        <button className="signup-button" >SignUp</button>
+      </Link>
+
     </div>
   );
 };

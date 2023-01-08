@@ -24,7 +24,7 @@ export const Profile = () => {
 
   return (
     <div>
-      <h2>Profile page</h2>
+      <h3>Profile page</h3>
       <div>
         <div>Name:{name}</div>
         <div>

@@ -1,5 +1,5 @@
 import './Home.css';
 
 export const Home = () => {
-  return <h2>Home page</h2>;
+  return <h3>Home page</h3>;
 };

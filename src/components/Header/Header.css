@@ -1,24 +1,52 @@
 .header {
-    background-color: lightgray;
+    background-color: #e7e7e7;
     display: flex;
-    justify-content: space-between;
     padding: 20px;
 }
 
-.header-right-block {
-    display: flex;
-}
-
-.header-right-block-profile-icon {
+.button {
     display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
 }
 
-.header-right-block-home-icon {
+.button:active {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+.signin-button {
     display: block;
-    margin: 0 0 0 10px;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
 }
 
-.header-right-block-api-icon {
-    margin: 0 10px 0 10px;
-
+.signup-button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
 }

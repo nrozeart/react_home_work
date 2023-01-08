@@ -1,0 +1,34 @@
+#outlined-basic {
+    padding: 7px;
+}
+
+.message-field {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 20px 20px 20px;
+    width: 50%;
+    box-shadow: inset -1px 0 0 lightgray;
+}
+
+.message-field-messages {
+    list-style-type: none;
+}
+
+.message-field-send-form {
+    display: flex;
+
+}
+
+.message-field-send-form-message {
+    width: 100%;
+}
+
+.message-field-send-form-send-button {
+    width: 100px;
+}
+
+.bot-answer {
+    display: flex;
+    justify-content: right;
+}

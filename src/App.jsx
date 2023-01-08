@@ -1,10 +1,7 @@
 import './App.css';
 import { createTheme, ThemeProvider } from '@mui/material';
-import { ChatList } from './components/ChatList/ChatList';
-import { MessageField } from './components/MessageField/MessageField';
-import { Header } from './components/Header/Header';
 
-export const App = ({ chatId }) => {
+export const App = () => {
   const theme = createTheme({
     palette: {
       primary: {
@@ -22,13 +19,6 @@ export const App = ({ chatId }) => {
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <Header chatId={chatId} />
-        <div className="container">
-          <div className="communication-block">
-            <ChatList />
-            <MessageField />
-          </div>
-        </div>
       </div>
     </ThemeProvider>
   );

@@ -11,7 +11,8 @@ import { profileReducer } from './store/profile/profileReducer';
 import thunk from 'redux-thunk';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { compose } from 'react-apollo';
+import { flowRight as compose } from 'lodash';
+import { Header } from './components/Header/Header';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -58,6 +59,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
+      <Header />
       <Router />
     </BrowserRouter>
   </Provider>

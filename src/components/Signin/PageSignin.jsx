@@ -1,57 +1,60 @@
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { useNavigate } from 'react-router-dom'
+import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 // import {auth} from '../../redux/actions/profileAC'
-import { signIn } from '../../services/firebase'
+import { signIn } from '../../services/firebase';
 import './PageSignin.css';
-
 
 export const Signin = () => {
   // const dispatch = useDispatch()
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  const [inputs, setInputs] = useState({ email: '', password: '' })
-  const [error, setError] = useState('')
-  const [loading, setLoading] = useState(false)
+  const [inputs, setInputs] = useState({ email: '', password: '' });
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleInputs = (e) => {
-    console.log(e.target.value)
-    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }))
-  }
+    console.log(e.target.value);
+    setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
 
   const handlerForm = async (event) => {
-    event.preventDefault()
+    event.preventDefault();
     try {
-      setError('')
-      setLoading(true)
-      await signIn(inputs.email, inputs.password)
-      navigate('/profile')
+      setError('');
+      setLoading(true);
+      await signIn(inputs.email, inputs.password);
+      navigate('/profile');
     } catch (error) {
-      setError(error)
+      setError(error);
     } finally {
-      setLoading(false)
-      setInputs({ email: '', password: '' })
+      setLoading(false);
+      setInputs({ email: '', password: '' });
     }
-  }
+  };
 
   return (
     <>
       <h3>SignIn Page</h3>
       <form onSubmit={handlerForm}>
         <div className="mb-3">
-          <label htmlFor="exampleInputEmail1" className="form-label">Login</label>
+          <label htmlFor="exampleInputEmail1" className="form-label">
+            Login
+          </label>
           <input
             type="email"
             className="form-control"
             id="exampleInputEmail1"
-            name='email'
+            name="email"
             onChange={handleInputs}
             value={inputs.email ?? ''}
             aria-describedby="emailHelp"
           />
         </div>
         <div className="mb-3">
-          <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+          <label htmlFor="exampleInputPassword1" className="form-label">
+            Password
+          </label>
           <input
             type="password"
             name="password"
@@ -61,10 +64,12 @@ export const Signin = () => {
             id="exampleInputPassword1"
           />
         </div>
-        <button type="submit" className="btn">SignIn</button>
+        <button type="submit" className="btn">
+          SignIn
+        </button>
       </form>
       {loading && <p>Loading....</p>}
       {error && <p style={{ color: 'red' }}>{error.message}</p>}
     </>
-  )
-}
+  );
+};

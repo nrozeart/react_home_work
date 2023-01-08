@@ -10,7 +10,8 @@ import { Signin } from './components/Signin/PageSignin';
 export const Router = () => {
   return (
     <Routes>
-      <Route exact
+      <Route
+        exact
         path="/chat/1"
         element={<Chatspage chatId={'Алина Ковалева'} />}
       />
@@ -36,7 +37,6 @@ export const Router = () => {
       <Route path="*" element={<h2>404 Page not found</h2>} />
       <Route path="/signin" element={<Signin />} exact />
       <Route path="/signup" element={<Signup />} exact />
-
     </Routes>
   );
 };

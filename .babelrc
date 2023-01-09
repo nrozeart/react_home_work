@@ -1,0 +1,11 @@
+{
+    "presets": [
+        "@babel/preset-env", //чтобы читать все современные стандарты языка
+        [
+            "@babel/preset-react",
+            {
+                "runtime": "automatic"
+            }
+        ] //чтобы читать реакт/jsx разметку
+    ]
+}

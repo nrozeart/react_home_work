@@ -1,6 +1,27 @@
 .App {
   text-align: left;
-  background-color: lightgray;
   font-size: 24px;
-  padding: 20px;
+}
+
+.container {
+  margin: 10px;
+}
+
+.lesson-one {
+  background-color: lightgray;
+}
+
+.lesson-two {
+  background-color: lightyellow;
+}
+
+.lesson-three {
+  background-color: lightpink;
+  margin: 20px 0 0 0;
+}
+
+.communication-block {
+  display: flex;
+  width: 100%;
+  height: 100%;
 }

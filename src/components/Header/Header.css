@@ -1,0 +1,52 @@
+.header {
+    background-color: #e7e7e7;
+    display: flex;
+    padding: 20px;
+}
+
+.button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: white;
+    color: black;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.button:active {
+    background-color: #e7e7e7;
+    color: black;
+}
+
+.signin-button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.signup-button {
+    display: block;
+    margin: 0 0 0 15px;
+    border: none;
+    background-color: black;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+}

@@ -1,12 +1,12 @@
 import { CircularProgress } from '@mui/material';
 import { useCallback, useEffect, useState } from 'react';
-// import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 export const API_URL_PUBLIC = 'https://api.github.com/gists/public';
 export const API_URL_GIST = 'https://api.github.com/gists/';
 
 /* const gists = [];
- */
+
 export const GistsList = () => {
   const [gists, setGists] = useState([]);
   const [error, setError] = useState(false);
@@ -52,8 +52,10 @@ export const GistsList = () => {
   return <ul>{gists.map(renderGist)}</ul>;
 };
 
-/* 
-Вариант с мидлваром. Не работает. Почему-то не определяет gists
+ */
+
+
+// Вариант с мидлваром.Не работает.Почему - то не определяет gists
 
 export const GET_GISTS_REQUEST = "GISTS::GET_GISTS_REQUEST";
 export const GET_GISTS_SUCCESS = "GISTS::GET_GISTS_SUCCESS";
@@ -69,7 +71,7 @@ export const getGistsSuccess = (data) => ({
 export const getGistsFailure = (err) => ({
     type: GET_GISTS_FAILURE,
     payload: err,
-}); 
+});
 
 export const STATUSES = {
     IDLE: 0,
@@ -154,4 +156,3 @@ export const GistsList = () => {
     }
     return <ul>{gists.map(renderGist)}</ul>;
 };
- */
